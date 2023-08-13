@@ -31,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			getInitialCharacters: () => {
-				fetch('https://www.swapi.tech/api/people')
+				fetch('https://www.swapi.tech/api/people?page=7&limit=7')
 				.then(res => {
 					if (!res.ok) throw Error(res.statusText);
 					return res.json();
@@ -53,7 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.catch(error => console.error(error));
 			},
 			getInitialPlanets: () => {
-				fetch(`https://www.swapi.tech/api/planets`)
+				fetch(`https://www.swapi.tech/api/planets?page=2&limit=9`)
 				.then(res => {
 					if (!res.ok) throw Error(res.statusText);
 					return res.json();
@@ -75,7 +75,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.catch(error => console.error(error));
 			},
 			getInitialStarships: () => {
-				fetch('https://www.swapi.tech/api/starships')
+				fetch('https://www.swapi.tech/api/starships?page=2&limit=10')
 				.then(res => {
 					if (!res.ok) throw Error(res.statusText);
 					return res.json();
